@@ -1,2 +1,2 @@
 ## ASGM4 - Redux và giao tiếp Client-Server 
-Web Demo : https://asgm4-rjs101x-funix.netlify.app/staff
+Web Demo : https://rjs-101x-assignment4.vercel.app/staff
