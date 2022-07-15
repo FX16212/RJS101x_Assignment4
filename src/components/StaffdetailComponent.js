@@ -65,7 +65,7 @@ class EditForm extends Component {
 			doB: this.state.staff.doB,
 			salaryScale: parseFloat(this.state.staff.salaryScale, 2),
 			startDate: this.state.staff.startDate,
-			image: '/asset/images/alberto.png',
+			image: '/assets/images/alberto.png',
 			departmentId: this.state.staff.departmentId,
 			annualLeave: parseInt(this.state.staff.annualLeave, 10),
 			overTime: parseInt(this.state.staff.overTime, 10),

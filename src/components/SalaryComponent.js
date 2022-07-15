@@ -13,7 +13,7 @@ import { FadeTransform } from 'react-animation-components';
 const luongCB = 3000000;
 const luongGio = 200000;
 
-function RenderSalary({ salary, colorSalary }) {
+function RenderSalary({ salary }) {
 	return (
 		<FadeTransform
 			in
