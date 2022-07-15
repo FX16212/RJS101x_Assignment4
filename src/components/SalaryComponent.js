@@ -8,33 +8,43 @@ import {
 	BreadcrumbItem,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { FadeTransform } from 'react-animation-components';
 
 const luongCB = 3000000;
 const luongGio = 200000;
 
 function RenderSalary({ salary, colorSalary }) {
 	return (
-		<Card>
-			<CardTitle className="p-3 bg-white rounded m-2">{salary.name}</CardTitle>
-			<CardBody>
-				<CardText>Mã nhân viên: {salary.id}</CardText>
-				<CardText>Hệ số lương: {salary.salaryScale}</CardText>
-				<CardText>Số giờ làm thêm: {salary.overTime}</CardText>
-				<CardText className="bg-light p-2 shadow">
-					Lương:{' '}
-					{(salary.salaryScale * luongCB + salary.overTime * luongGio).toFixed(
-						0
-					)}
-				</CardText>
-			</CardBody>
-		</Card>
+		<FadeTransform
+			in
+			transformProps={{
+				exitTransform: 'scale(0.5) translateY(-50%)',
+			}}>
+			<Card>
+				<CardTitle className="p-3 bg-white rounded m-2">
+					{salary.name}
+				</CardTitle>
+				<CardBody>
+					<CardText>Mã nhân viên: {salary.id}</CardText>
+					<CardText>Hệ số lương: {salary.salaryScale}</CardText>
+					<CardText>Số giờ làm thêm: {salary.overTime}</CardText>
+					<CardText className="bg-light p-2 shadow">
+						Lương:{' '}
+						{(
+							salary.salaryScale * luongCB +
+							salary.overTime * luongGio
+						).toFixed(0)}
+					</CardText>
+				</CardBody>
+			</Card>
+		</FadeTransform>
 	);
 }
 
 const Salary = (props) => {
 	const [sortSalary, setSortSalary] = useState(false);
 
-	const salary = props.staffs
+	const salary = props.salary
 		.sort((a, b) =>
 			sortSalary ? a.salaryScale - b.salaryScale : b.salaryScale - a.salaryScale
 		)
